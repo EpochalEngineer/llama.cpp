@@ -5,15 +5,15 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - DISABLED
     paths: [
       '.github/workflows/build-cross.yml',
       'ggml/src/spacemit/*',
       'ggml/src/arch/loongarch/*'
     ]
   # run once every week
-  schedule:
-    - cron: '0 0 * * 0'
+#  schedule:
+#    - cron: '0 0 * * 0'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref && github.ref || github.run_id }}

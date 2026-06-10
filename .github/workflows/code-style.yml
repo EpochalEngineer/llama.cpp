@@ -4,10 +4,10 @@ on:
   workflow_dispatch: # allows manual triggering
   push:
     branches:
-      - master
+      - DISABLED
   pull_request:
     branches:
-      - master
+      - DISABLED
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref && github.ref || github.run_id }}
